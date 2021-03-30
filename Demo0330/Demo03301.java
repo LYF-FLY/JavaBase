@@ -5,12 +5,18 @@
 抽象类的特点
 1、不能创建对象
 2、子类必须父类的抽象方法
+
+抽象类肯定是父类，因为他不能创建对象
+抽象类有构造方法，还可以自己给他写构造方法，这个构造方法是给子类用的
+不能和final共同用；因为final不能有子类，而抽象类有子类，final的方法不可重写
+不能和static用static修饰的方法可以直接通过类名调用，abstract修饰的方法不能被调用
+private修饰的方法不能被重写，抽象类的方法需要被重写
 */
 abstract class Shape
 {
 	public abstract double area();
 }
-abstract class Circle extends Shape
+class Circle extends Shape
 {
 	
 	public static final double PI = 3.14;
