@@ -1,0 +1,61 @@
+/*
+抽象类
+子类对父类中共性的方法有着不同的实现方式，父类中就不实现该方法了
+含有抽象方法的类交抽象类
+抽象类的特点
+1、不能创建对象
+2、子类必须父类的抽象方法
+*/
+abstract class Shape
+{
+	public abstract double area();
+}
+abstract class Circle extends Shape
+{
+	
+	public static final double PI = 3.14;
+	private double radius;
+
+	Circle(){}
+
+	Circle(double radius)
+	{
+		this.radius = radius;
+	}	
+}
+
+ class Rectangle extends Shape
+{
+	private double length;
+	private double width;
+
+	Rectangle(){}
+	Rectangle(double length, double width)
+	{
+		this.length = length;
+		this.width = width;
+	}
+	public double area()
+	{
+		return length*width;
+	}
+}
+class  Demo1
+{
+	public static void main(String[] args) 
+	{
+		Circle cir;
+		Rectangle rec = new Rectangle(1, 2);
+		System.out.println(rec.area());
+
+	}
+}
+
+class  Demo
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello World!");
+	}
+}
+

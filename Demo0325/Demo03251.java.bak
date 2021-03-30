@@ -1,0 +1,24 @@
+class Car
+{
+	String color;//描述对象的属性
+	int num;
+
+	public void run()//描述对象的行为
+	{
+		System.out.println("跑");
+	}
+}
+//在类中定义的变量是成员变量
+//在类中定义的方法是成员方法
+class  Demo1
+{
+	public static void main(String[] args) 
+	{
+		Car benchi = new Car();//奔驰存储了new Car（）在堆中开辟内存的地址
+
+		benchi.color = "white";
+		benchi.num = 4;
+		benchi.run();
+		System.out.println("奔驰的颜色" + benchi.color + "奔驰的轮子" + benchi.num);
+	}
+}
