@@ -26,73 +26,44 @@
 设计一个手机类，实现这个数据传输接口，采用Type-C；同时实现了防水的接口
 
 */
-interface USB
+interface usb
 {
-    public abstract String getDeviceInfo();
+	void show();
 }
-class Mouse implements USB
+class Mouse implements usb
 {
-	public String getDeviceInfo()
+	public void show()
 	{
-		return "鼠标设备";
-	}
-}
-class KeyBoard implements USB
-{
-	public String getDeviceInfo()
-	{
-		return "键盘设备";
+		System.out.println("我是鼠标");
 	}
 }
-class UPan implements USB
+class KeyBord implements usb
 {
-    public String getDeviceInfo()
+	public void show()
 	{
-		return "u盘设备";
+		System.out.println("我是键盘");
 	}
 }
-class Computer
+class Upan implements usb
 {
-	private USB usb1;
-	private USB usb2;
-	private USB usb3;
-
-	Computer()
+	public void show()
 	{
-		
+		System.out.println("我是优盘");
 	}
-	Computer(USB usb1,USB usb2,USB usb3)
-	{
-		this.usb1=usb1;
-		this.usb2=usb2;
-		this.usb3=usb3;
-	}
-   
-    public void showInfo()
-	{
-		System.out.println(usb1.getDeviceInfo());
-		System.out.println(usb2.getDeviceInfo());
-		System.out.println(usb3.getDeviceInfo());
-	}
-
 }
-class Home2 
+class Demo1 
 {
 	public static void main(String[] args) 
 	{
-		Mouse mouse=new Mouse();
-
-		KeyBoard  keyBoard=new KeyBoard();
-
-		UPan upan=new UPan();
-
-		Computer com=new Computer(mouse,keyBoard,upan);
-
-        com.showInfo();
+		usb mouse = new Mouse();
+		usb keyboard = new KeyBord();
+		usb upan = new Upan();
+		mouse.show();
+		keyboard.show();
+		upan.show();
 
 	}
 }
-
 //=============
 abstract class Transport
 {
