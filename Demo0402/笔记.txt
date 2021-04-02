@@ -1,0 +1,22 @@
+StringBuffer() 是一个容器，字符串长度可变，底层就是数组 保证多线程安全，加锁
+返回值是StringBuffer（）
+append()
+insert()
+delete()
+deleteCharAt() 删除指定索引字符
+replace（）
+setCharAt()
+reverse()
+StringBuilder() 不能保证同步 多线程不能保证安全 
+
+打包 类名相同的放不同的包下面  .class就在不同的文件夹下  打包的时候类名修饰
+为public ，而且文件要与类名相同
+
+      	 同一个类中             同一个包中               不同包中没有继承关系              不同包有继承关系
+private          Y                       N                        N                                    N
+ 
+   默认          Y                       Y                        N                                    N
+
+protected        Y                       Y                        N                                    Y
+
+public           Y                       Y                        Y                                    Y
