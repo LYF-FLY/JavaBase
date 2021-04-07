@@ -1,0 +1,237 @@
+ ?ygp(q)1MiIq
+注：按Java规范书写程序代码，如果你认为程序有错误，请指出，并说明程序错误原因。
+
+1.
+写出程序结果
+class Demo  //B A
+{	
+	public static void func()  //
+	{
+		try
+		{
+		           throw  new Exception();
+		}
+		finally
+		{
+			System.out.println("B");
+		}
+	}
+	public static void main(String[] args)
+	{
+		try
+		{
+			func(); 
+			System.out.println("A");
+		}
+		catch(Exception e)
+		{
+			System.out.println("C");
+		}
+		System.out.println("D");
+	}
+}
+
+
+====================================================================
+
+====================================================================
+2.
+写出程序结果	//ABCD
+class Demo
+{
+	public static void main(String[] args)
+	{
+		try
+		{
+			showExce();
+			System.out.println("A");
+		}
+		catch(Exception e)
+		{
+			System.out.println("B");
+		}
+		finally
+		{
+			System.out.println("C");
+		}
+		System.out.println("D");
+	}
+
+	public static void showExce()throws Exception 
+	{
+		throw new Exception();
+	}
+}
+
+
+==================================================================
+====================================================================
+3.
+写出程序结果：//bd
+class Demo
+{	
+	public static void func()
+	{
+		try
+		{
+			throw  new Exception();
+			System.out.println("A");
+		}
+		catch(Exception e)
+		{
+			System.out.println("B");
+		}
+	}
+	public static void main(String[] args)
+	{
+		try
+		{
+			func();
+		}
+		catch(Exception e)
+		{
+			System.out.println("C");
+		}
+		System.out.println("D");
+	}
+}
+
+
+
+
+====================================================================
+====================================================================
+4.
+写出程序结果
+class Exc0 extends Exception{}
+class Exc1 extends Exc0{}
+
+class Demo
+{
+	public static void main(String[] args)
+	{
+		try
+		{
+			throw new Exc1();
+		}		
+		catch(Exception e)		
+		{
+			System.out.println("Exception");
+		}
+		catch(Exc0 e)
+		{
+			System.out.println("Exc0");
+		}
+	}
+}
+
+
+
+====================================================================
+====================================================================
+5.
+写出程序结果	
+class Test     //34
+{ 
+	public static String output=""; 
+
+	public static void foo(int i)
+	{ 
+		try
+		{ 
+			if(i==1)
+			     throw new Exception(); 	
+			output+="1";   
+		} 
+		catch(Exception e)
+		{ 
+			output+="2";   
+			return; 
+		} 
+		finally
+		{ 
+			output+="3"; 
+		} 
+		output+="4"; 
+	}
+	public static void main(String args[])
+	{ 
+		foo(0);
+		System.out.println(output);
+
+		foo(1); 
+		System.out.println(output);  
+	}
+} 
+
+====================================================================
+====================================================================
+6.
+补足compare函数内的代码，不许添加其他函数。
+class Circle
+{
+	private static double pi=3.14;
+	private double radius;
+
+	public Circle(double r)
+	{
+		radius=r;
+	}
+	public static double compare(Circle[] cir)
+	{
+		double x = 0;//程序代码	
+     		   for (Circle num:cir)
+     		   {
+			if (num.radius > x)
+			  x = num.radius;
+      		  }
+			return x;
+                                 
+		
+	}
+}
+class TC
+{
+	public static void main(String[] args)
+	{
+		Circle cir[]=new Circle[3];//创建了一个类类型数组。
+		cir[0]=new Circle(1.0);
+		cir[1]=new Circle(2.0);
+		cir[2]=new Circle(4.0);
+		System.out.println("最大的半径值是："+Circle.compare(cir));
+	}
+}
+====================================================================
+
+
+====================================================================
+7.
+补足compare函数内的代码，不许添加其他函数。
+class Circle
+{	
+	private double radius;
+	public Circle(double r)
+	{
+		radius=r;
+	}
+	public Circle compare(Circle cir)
+	{
+		this.radius > cir.radius?return this : return cir;
+	   
+		
+	}
+}
+class TC
+{
+	public static void main(String[] args)
+	{
+		Circle cir1=new Circle(1.0);
+		Circle cir2=new Circle(2.0);
+		Circle cir;
+		cir=cir1.compare(cir2);
+		if(cir1==cir)
+			System.out.println("圆1的半径比较大");
+		else
+			System.out.println("圆2的半径比较大");
+	}
+}
