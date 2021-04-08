@@ -1,5 +1,4 @@
 //让一个类有固定个数对象，定义枚举类
-//枚举类可以实现接口 
 enum Season //继承了Enum 不能再继承了
 {
 	SPRING{
@@ -42,10 +41,6 @@ class  Demo
 		System.out.println(season);
 
 		Season[] sea1 = Season.values(); //得到所有枚举项
-
-		Enum e = Season.SUMMER;
-		Object obj = Season.SUMMER;
-
 
 	}
 }
