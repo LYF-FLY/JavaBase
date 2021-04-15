@@ -1,0 +1,9 @@
+class Demo3 
+{
+	public static void main(String[] args) 
+	{
+		//当存在映射关系，使用map
+		//每个学生对应一个住址
+		System.out.println("Hello World!");
+	}
+}
